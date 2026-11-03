@@ -1,0 +1,114 @@
+﻿
+================================================================================
+File: data\raw\business_licenses\Basic_Business_License.csv
+Size: 139.34 MB
+Number of columns: 40
+Sample rows inspected: 100
+Preliminary columns and data types:
+ - CUSTOMERNUMBER: str
+ - LICENSESTATUS: str
+ - LICENSETYPE: str
+ - LICENSESTATUSDATE: str
+ - LICENSESTARTDATE: str
+ - LICENSEENDDATE: str
+ - INITIALISSUEDATE: str
+ - BUSINESSACTIVITY: str
+ - PREMISEADDRESS: str
+ - PREMISEINDC: str
+ - ENTITYNAME: str
+ - ENTITYTRADENAME: str
+ - ENTITYTYPE: str
+ - PRIMARYACTIVITYFLAG: str
+ - CATEGORYSERVICETYPE: str
+ - BUSINESSOWNERFIRSTNAME: str
+ - BUSINESSOWNERLASTNAME: str
+ - BUSINESSOWNERMIDDLENAME: str
+ - BILLINGADDRESS: str
+ - AGENTFIRSTNAME: str
+ - AGENTLASTNAME: str
+ - AGENTMIDDLENAME: str
+ - AGENTENTITY: str
+ - DATAREFRESHEDON: str
+ - WARD: str
+ - ANC: str
+ - SMD: str
+ - DISTRICT: str
+ - PSA: float64
+ - NEIGHBORHOODCLUSTER: str
+ - BUSINESSIMPROVEMENTDISTRICT: str
+ - MAINSTREET: str
+ - MAR_ID: float64
+ - SSL: str
+ - LATITUDE: float64
+ - LONGITUDE: float64
+ - X_COORDINATE: float64
+ - Y_COORDINATE: float64
+ - GLOBALID: str
+ - OBJECTID: int64
+
+================================================================================
+File: data\raw\neighborhood_clusters\Neighborhood_Clusters.csv
+Size: 0.01 MB
+Number of columns: 11
+Sample rows inspected: 46
+Preliminary columns and data types:
+ - NBH_NAMES: str
+ - NAME: str
+ - WEB_URL: str
+ - TYPE: str
+ - GIS_ID: str
+ - GLOBALID: str
+ - CREATED: float64
+ - EDITED: float64
+ - OBJECTID: int64
+ - SHAPEAREA: int64
+ - SHAPELEN: int64
+
+================================================================================
+File: data\raw\neighborhood_clusters\Neighborhood_Clusters.zip
+Size: 0.39 MB
+ZIP contents:
+ - Neighborhood_Clusters.shx (0.5 KB)
+ - Neighborhood_Clusters.shp (601.2 KB)
+ - Neighborhood_Clusters.prj (0.4 KB)
+ - Neighborhood_Clusters.dbf (9.3 KB)
+ - Neighborhood_Clusters.xml (9.8 KB)
+ - Neighborhood_Clusters.cpg (0.0 KB)
+
+================================================================================
+File: data\raw\wards\Ward_-_2022.csv
+Size: 0.00 MB
+Number of columns: 20
+Sample rows inspected: 8
+Preliminary columns and data types:
+ - WARD: int64
+ - NAME: str
+ - REP_NAME: str
+ - WEB_URL: str
+ - REP_PHONE: str
+ - REP_EMAIL: str
+ - REP_OFFICE: str
+ - WARD_ID: int64
+ - LABEL: str
+ - STUSAB: str
+ - SUMLEV: int64
+ - GEOID: str
+ - GEOCODE: int64
+ - STATE: int64
+ - OBJECTID: int64
+ - GLOBALID: str
+ - CREATED_DATE: float64
+ - LAST_EDITED_DATE: str
+ - SHAPEAREA: int64
+ - SHAPELEN: int64
+
+================================================================================
+File: data\raw\wards\Wards_from_2022.zip
+Size: 0.23 MB
+ZIP contents:
+ - Wards_from_2022.cpg (0.0 KB)
+ - Wards_from_2022.shp (350.3 KB)
+ - Wards_from_2022.shx (0.2 KB)
+ - Wards_from_2022.xml (13.9 KB)
+ - Wards_from_2022.dbf (2.8 KB)
+ - Wards_from_2022.prj (0.4 KB)

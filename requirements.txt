@@ -1,0 +1,9 @@
+pandas
+geopandas
+sqlalchemy
+psycopg[binary]
+geoalchemy2
+jupyterlab
+ipykernel
+openpyxl
+python-dotenv

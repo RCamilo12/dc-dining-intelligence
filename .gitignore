@@ -1,0 +1,10 @@
+.venv/
+.env
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+data/raw/
+data/processed/
+.vscode/
+data/raw/
+data/processed
