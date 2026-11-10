@@ -118,6 +118,8 @@ def main() -> None: #MAIN PROGRAM
     license_status_counts = Counter()
     business_activity_counts = Counter()
     premise_in_dc_counts = Counter()
+    license_type_counts = Counter()
+    candidate_category_counts = Counter()
 
     #Reading the csv file from the source and returning the chunk size amount of registers
     #Specifying dtype="string" preserves identifiers exactly as provided.
@@ -135,17 +137,22 @@ def main() -> None: #MAIN PROGRAM
         # Accumulate full-dataset frequency counts.
         update_counts(
             license_status_counts,
-            chunk["LICENSESTATUS"],
+            chunk["LICENSESTATUS"], #current vs historical licenses
+        )
+
+        update_counts(
+            license_type_counts,
+            chunk["LICENSETYPE"] #amount of licenses per type
         )
 
         update_counts(
             business_activity_counts,
-            chunk["BUSINESSACTIVITY"],
+            chunk["BUSINESSACTIVITY"], #type of business
         )
 
         update_counts(
             premise_in_dc_counts,
-            chunk["PREMISEINDC"],
+            chunk["PREMISEINDC"], #is it physically in D.C.?
         )
 
         # Normalize only for comparison. Original values remain unchanged.
@@ -162,17 +169,22 @@ def main() -> None: #MAIN PROGRAM
         )
 
         # A record must satisfy all three of the following conditions
+        # Relates to the status, activity and premise.
         restaurant_mask = (
-            normalized_status.eq("ACTIVE")
-            & normalized_activity.eq("RESTAURANT")
-            & normalized_premise.eq("YES")
+            normalized_status.eq("ACTIVE") #checks the license is active
+            & normalized_activity.eq("RESTAURANT") #filters restaurants
+            & normalized_premise.eq("YES") #
         )
 
         #Creating a new dataframe with the filtered rows totally independent
-        restaurant_chunks.append(
-            chunk.loc[restaurant_mask].copy() 
-        )
+        restaurant_chunk = chunk.loc[restaurant_mask].copy()
 
+        update_counts(
+            candidate_category_counts,
+            restaurant_chunk["CATEGORYSERVICETYPE"], #service category offered by the restaurant
+        )
+        restaurant_chunks.append(restaurant_chunk)
+    
         restaurants_found = int(restaurant_mask.sum()) #we sum the amount of restaurants
 
         print( #Quick report about the progress done in the program
@@ -222,7 +234,7 @@ def main() -> None: #MAIN PROGRAM
 
     update_counts( #updating the counts
         candidate_primary_counts,
-        restaurant_candidates["PRIMARYACTIVITYFLAG"],
+        restaurant_candidates["PRIMARYACTIVITYFLAG"], #Restaurant is their primary activity
     )
 
     update_counts(
@@ -312,6 +324,20 @@ def main() -> None: #MAIN PROGRAM
         "Restaurant candidates by neighborhood cluster",
         candidate_cluster_counts,
     )
+
+    add_counter_section(
+        report,
+        "License types - all source records",
+        license_type_counts,
+    )
+
+    add_counter_section(
+        report,
+        "Category of service of all restaurant candidates",
+        candidate_category_counts
+    )
+
+
 
     report_text = "\n".join(report) #coverts the list into a text
 
