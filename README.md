@@ -78,6 +78,10 @@ These 2,236 records are restaurant-license candidates, not necessarily
 2,236 unique restaurants. Deduplication and entity resolution have not
 yet been completed.
 
+## Business Identification
+
+Creating SQL queries we verify there is a GLOBALID and OBJECTID for every record in the list. 
+
 ## Current Status
 
 - [x] Create the local development environment
