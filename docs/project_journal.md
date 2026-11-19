@@ -30,12 +30,6 @@ Create a local environment capable of Python, SQL and geospatial analysis.
 - `psql` was not initially available through the Windows PATH.
 - Command-line commands and SQL queries must be executed in different interfaces.
 
-### Resolution
-
-Document how each issue was resolved here.
-
----
-
 ## Milestone 2 — Source Inspection
 
 ### Objective
@@ -107,6 +101,14 @@ A candidate record must satisfy:
 - Why are some wards represented as `WARD 2` while others are `2`?
 - Are the 131 missing clusters the same records as the 131 missing coordinates?
 
+## Milestone 4 - Duplicate Records
+
+I do not expect repeated restaurant names or addresses. I think that since this came from a government 
+source the whole database should be updated frequently. A repeated combination in names would mean that 
+a restaurant has more than one location in the city, however if that is the case the address should be the
+difference. A repeat in the address would mean that the restaurant has more than one business activity but 
+that should have been filtered on our .py profiling process   
+
 ### Next Step
 
-Profile identifiers and investigate duplicate restaurant candidates.
+EXAMINE THE RESULTS OF THE DUPLICATES AND TAKE DECISIONS INTO WHAT TO DO WITH THEM
