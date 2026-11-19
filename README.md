@@ -89,8 +89,8 @@ Creating SQL queries we verify there is a GLOBALID and OBJECTID for every record
 - [x] Inspect source files
 - [x] Profile the Business License dataset
 - [x] Extract initial restaurant-license candidates
-- [ ] Analyze identifiers and duplicate records
-- [ ] Load candidate records into PostgreSQL
+- [x] Analyze identifiers and duplicate records
+- [x] Load candidate records into PostgreSQL
 - [ ] Import ward and neighborhood polygons
 - [ ] Validate geography with spatial joins
 - [ ] Build a deduplicated restaurant table
